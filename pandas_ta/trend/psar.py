@@ -68,11 +68,7 @@ def psar(high, low, close=None, af0=None, af=None, max_af=None, offset=None, **k
 
         if reverse:
             _sar = ep
-            
-            #MM Change
-            #af = af0
-            af = float(af) if af and af > 0 else 0.02  # Reset to the passed `af` parameter upon reversal
-            
+            af = af0
             falling = not falling # Must come before next line
             ep = low_ if falling else high_
 
